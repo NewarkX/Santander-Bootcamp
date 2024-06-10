@@ -14,7 +14,12 @@ public class Contador {
         System.out.println("Digite o segundo parametro: ");
         int parametroDois = scanner.nextInt();
 
-        contar(parametroUm, parametroDois);
+
+        try {
+            contar(parametroUm, parametroDois);
+        }catch (ParametrosInvalidosException exception){
+            System.out.println(exception.getMessage());
+        }
 
         scanner.close();
     }
